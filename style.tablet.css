@@ -3,7 +3,6 @@
 /* HERO: isto ponašanje, samo skalirano */
 .ch030-hero-title{
     font-size: clamp(84px, 10vw, 120px); /* 150 → ~100–120 u zavisnosti od širine */
-    margin-left: -50px;                  /* proporcionalno -75px na desktopu */
     padding: 28px 0 32px;
     line-height: .92;
     letter-spacing: .02em;
@@ -63,3 +62,12 @@
     gap: 24px;
   }
   .about-img { max-width: 300px; }
+  /* === ABOUT – isti izgled kao desktop === */
+.about-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr; /* 3 kolone kao desktop */
+    gap: 40px;
+    align-items: center;
+  }
