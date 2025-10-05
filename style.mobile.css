@@ -1,142 +1,85 @@
-/* === MOBILE (≤640px) — isti raspored (3 kolone), ista animacija, isti overlay === */
+/* MOBILE (≤640px) — linearno sve ispod svega, bez preklapanja */
+body{ overflow-x:hidden; }
 
-/* Spriječi eventualni horizontalni scroll */
-body{ overflow-x: hidden; }
-
-/* HERO: isto ponašanje, samo manje */
+/* Hero manji, animacija ostaje */
 .ch030-hero-title{
-  font-size: clamp(36px, 16vw, 64px);
-  padding: 20px 0 24px;
+  font-size: clamp(40px, 14vw, 64px);
+  margin-left: -28px;
+  padding: 22px 0 26px;
   line-height: .94;
-  letter-spacing: .02em;
-  white-space: nowrap;             /* ostaje u jednom redu kao na desktopu */
-  /* background i var(--mx/--my) ne diramo */
+  white-space: nowrap;
 }
 
-/* OVERLAY: ne diramo position/fixed ni transform — ostaje identično desktopu */
-
-/* ABOUT: i dalje 3 kolone da vizuelno ostane isto (sredina je slika) */
-.container{
-  width: 94%;
-  max-width: 600px;
-  margin: 32px auto;
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 160px minmax(0,1fr); /* uske bočne kolone + centar slika */
-  gap: 16px;
-  align-items: start;
-}
-
-/* Slika ostaje u srednjoj koloni */
-.center-img{
-  width: 160px;
-  max-width: 100%;
-  height: auto;
-  max-height: 40vh;
-  display: block;
+/* About – jedna kolona */
+.about{ padding: 48px 0 44px; }
+.about-container{
+  width: 92%;
+  max-width: 560px;
   margin: 0 auto;
-  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "media"
+    "skills";
+  gap: 20px;
+}
+.about-text{ grid-area:text; }
+.about-media{ grid-area:media; text-align:center; }
+.about-skills{ grid-area:skills; }
+
+.about-text h2{ font-size:1.45rem; margin-bottom:10px; text-align:center; }
+.about-text p{
+  font-size:15.5px; line-height:150%;
+  text-align:justify;
+}
+.about-img{
+  max-width: 78%;
+  height:auto;
+  margin: 2px auto 6px;
 }
 
-/* Tipografija sitnije ali isti stil, bez promjene poravnanja */
-.left h2, .right h2{ font-size: 1.35rem; margin-bottom: 10px; }
-.left h3, .right h3{ font-size: 1.08rem; margin: 20px 0 8px; }
-p, li{ font-size: 15.5px; line-height: 150%; text-align: justify; }
+.about-skills h3{ font-size:1.2rem; text-align:center; margin:6px 0 8px; }
+.skills-list{ text-align:center; }
+.skills-list li{ font-size:15.5px; }
 
-/* PROGRAMS */
-#programs{ padding: 50px 14px 68px; }
-h4{ font-size: 26px; padding-bottom: 16px; }
-.programs-container{ gap: 14px; }
-.programs-container img{
-  width: 48px;
-  border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.18);
-}
+/* Programs */
+#programs{ padding:54px 14px 70px; }
+h4{ font-size:26px; padding-bottom:16px; }
+.programs-container{ gap:16px; }
+.programs-container img{ width:50px; border-radius:10px; box-shadow:0 8px 22px rgba(0,0,0,.18); }
 
-/* SLIDER — skalirano, ali isti dojam rasporeda */
+/* Slider skaliran */
 :root{
-  --menu030-card-w: 220px;  /* ostaje tvoja baza za mobile */
+  --menu030-card-w: 220px;
   --menu030-card-h: 340px;
-  --menu030-gap: 260px;     /* malo veći gap da bočne kartice “dišu”, vizuelno bliže desktopu */
+  --menu030-gap: 260px;
 }
-.menu030{ padding: 30px 0 52px; }
-.menu030-container{ padding: 0 16px; }
-.menu030-title{ font-size: 38px; margin: 18px 0 28px; }
+.menu030{ padding:32px 0 54px; }
+.menu030-container{ padding:0 16px; }
+.menu030-title{ font-size:38px; margin:20px 0 30px; }
+.menu030-stage{ height:calc(var(--menu030-card-h) + 28px); }
+.menu030-arrow{ width:32px; height:32px; font-size:28px; top:50%; }
+.menu030-prev{ left:8px; } .menu030-next{ right:8px; }
 
-.menu030-stage{ height: calc(var(--menu030-card-h) + 28px); }
+.page-footer{ margin-top:64px; }
+.contact-btn{ padding:.85rem 1.5rem; font-size:.98rem; }
 
-.menu030-card{ border-radius: 22px; padding: 10px; }
-.menu030-card::before{ inset: 6px; border-radius: 18px; }
-.menu030-card.is-center{
-  width: calc(var(--menu030-card-w) * 1.18);
-  height: calc(var(--menu030-card-h) * 1.18);
-  border-radius: 24px;
-  padding: 12px;
-}
-
-.menu030-arrow{
-  width: 32px; height: 32px; font-size: 28px;
-  top: 50%;
-}
-.menu030-prev{ left: 8px; }
-.menu030-next{ right: 8px; }
-
-/* FOOTER */
-.page-footer{ margin-top: 64px; }
-.contact-btn{ padding: .85rem 1.5rem; font-size: .98rem; }
-
-/* RESET GRID U JEDNU KOLONU */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 92%;
-    max-width: 560px;
-    margin: 36px auto;
-    gap: 26px;
+.about-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "media"
+      "skills";
+    gap: 20px;
   }
   
-  /* Slika ide prva */
-  .center {
-    order: -1;
+  .about-text h2,
+  .about-skills h3 {
     text-align: center;
   }
   
-  .center-img {
-    max-width: 70%;
-    height: auto;
-    margin: 0 auto 20px;
-    display: block;
-  }
-  
-  /* Tekstovi ispod slike, jedan ispod drugog */
-  .left, .right {
-    width: 100%;
-  }
-  
-  /* Naslovi */
-  .left h2, .right h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-  
-  /* Podnaslovi */
-  .left h3, .right h3 {
-    font-size: 1.1rem;
-    margin: 18px 0 10px;
-    text-align: center;
-  }
-  
-  /* Paragrafi i liste */
-  p, li {
-    font-size: 15.5px;
-    line-height: 150%;
-    text-align: justify;
-    margin-bottom: 10px;
-  }
-  
-  /* Liste da ne idu u dve kolone */
-  .left ul, .right ul {
-    list-style: disc;
-    padding-left: 20px;
+  .about-img {
+    max-width: 80%;
+    margin: 0 auto;
   }
