@@ -1,72 +1,67 @@
-/* === MOBILE OVERRIDES (animacija i overlay ostaju isti) === */
+/* === MOBILE (≤640px) — isti raspored (3 kolone), ista animacija, isti overlay === */
 
-/* Spriječi horizontalni scroll od velikih fontova */
+/* Spriječi eventualni horizontalni scroll */
 body{ overflow-x: hidden; }
 
-/* HERO: manji font, i dalje jedan red + lagani pomak nalijevo */
+/* HERO: isto ponašanje, samo manje */
 .ch030-hero-title{
-  font-size: clamp(44px, 12vw, 68px);
-  margin-left: -12px;           /* zadržavamo “look” pomjereno kao na desktopu */
-  padding: 22px 0 26px;
-  line-height: .96;
+  font-size: clamp(36px, 16vw, 64px);
+  margin-left: -32px;              /* zadržava “pomak” kao na desktopu, ali blaži */
+  padding: 20px 0 24px;
+  line-height: .94;
   letter-spacing: .02em;
-  white-space: nowrap;          /* ostaje isti vizuelni princip */
-  /* background i var(--mx/--my) NE diramo – animacija ostaje */
+  white-space: nowrap;             /* ostaje u jednom redu kao na desktopu */
+  /* background i var(--mx/--my) ne diramo */
 }
 
-/* OVERLAY SEKCIJE: NE diramo position/fixed – ponašanje ostaje isto kao desktop */
-.index{ /* bez promjena – ostaje fixed, inset, z-index, overflow hidden */ }
-.about{
-  /* ostaje fixed + transform iz originalnog CSS-a */
-}
+/* OVERLAY: ne diramo position/fixed ni transform — ostaje identično desktopu */
 
-/* SCROLL SPACE ostaje kako je definisano u desktop CSS-u */
-
-/* ABOUT GRID: prebacujemo u 1 kolonu zbog širine, ali zadržavamo isti stil */
+/* ABOUT: i dalje 3 kolone da vizuelno ostane isto (sredina je slika) */
 .container{
-  width: 92%;
-  max-width: 560px;
-  margin: 36px auto;
+  width: 94%;
+  max-width: 600px;
+  margin: 32px auto;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
+  grid-template-columns: minmax(0,1fr) 160px minmax(0,1fr); /* uske bočne kolone + centar slika */
+  gap: 16px;
+  align-items: start;
 }
 
-/* Redosled: slika iznad teksta da zadrži vizuelnu hijerarhiju sa hero-om */
-.center{ order: -1; }
+/* Slika ostaje u srednjoj koloni */
 .center-img{
-  max-width: 82%;
-  max-height: 40vh;
+  width: 160px;
+  max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  max-height: 40vh;
   display: block;
+  margin: 0 auto;
   z-index: 2;
 }
 
-.left h2, .right h2{ font-size: 1.45rem; margin-bottom: 10px; }
-.left h3, .right h3{ font-size: 1.1rem;  margin: 20px 0 8px; }
-p, li{ font-size: 15.5px; line-height: 150%; text-align: left; }
+/* Tipografija sitnije ali isti stil, bez promjene poravnanja */
+.left h2, .right h2{ font-size: 1.35rem; margin-bottom: 10px; }
+.left h3, .right h3{ font-size: 1.08rem; margin: 20px 0 8px; }
+p, li{ font-size: 15.5px; line-height: 150%; text-align: justify; }
 
 /* PROGRAMS */
-#programs{ padding: 54px 14px 70px; }
+#programs{ padding: 50px 14px 68px; }
 h4{ font-size: 26px; padding-bottom: 16px; }
-.programs-container{ gap: 16px; }
+.programs-container{ gap: 14px; }
 .programs-container img{
-  width: 50px;
+  width: 48px;
   border-radius: 10px;
   box-shadow: 0 8px 22px rgba(0,0,0,.18);
 }
 
-/* SLIDER: skalirane kartice i gap; ponašanje ostaje identično */
+/* SLIDER — skalirano, ali isti dojam rasporeda */
 :root{
-  --menu030-card-w: 220px;     /* konzistentno s tvojom var. */
+  --menu030-card-w: 220px;  /* ostaje tvoja baza za mobile */
   --menu030-card-h: 340px;
-  --menu030-gap: 240px;        /* malo veći od 220 zbog vizuelne ravnoteže na uskom ekranu */
+  --menu030-gap: 260px;     /* malo veći gap da bočne kartice “dišu”, vizuelno bliže desktopu */
 }
-
-.menu030{ padding: 32px 0 54px; }
+.menu030{ padding: 30px 0 52px; }
 .menu030-container{ padding: 0 16px; }
-.menu030-title{ font-size: 40px; margin: 20px 0 30px; }
+.menu030-title{ font-size: 38px; margin: 18px 0 28px; }
 
 .menu030-stage{ height: calc(var(--menu030-card-h) + 28px); }
 
@@ -87,5 +82,5 @@ h4{ font-size: 26px; padding-bottom: 16px; }
 .menu030-next{ right: 8px; }
 
 /* FOOTER */
-.page-footer{ margin-top: 70px; }
+.page-footer{ margin-top: 64px; }
 .contact-btn{ padding: .85rem 1.5rem; font-size: .98rem; }
