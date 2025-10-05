@@ -189,3 +189,19 @@ h4{
 .about-skills h3 {
   text-align: center;
 }
+
+.page.about {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertikalno centriranje */
+  min-height: 100vh;
+}
+
+.about-container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  gap: 40px;
+  align-items: center; /* i sadržaj unutar grida */
+}
