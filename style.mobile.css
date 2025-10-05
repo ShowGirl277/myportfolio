@@ -4,7 +4,6 @@ body{ overflow-x:hidden; }
 /* Hero manji, animacija ostaje */
 .ch030-hero-title{
   font-size: clamp(40px, 14vw, 64px);
-  margin-left: -28px;
   padding: 22px 0 26px;
   line-height: .94;
   white-space: nowrap;
@@ -13,7 +12,7 @@ body{ overflow-x:hidden; }
 /* About – jedna kolona */
 .about{ padding: 48px 0 44px; }
 .about-container{
-  width: 92%;
+  width: 90%;
   max-width: 560px;
   margin: 0 auto;
   display: grid;
@@ -22,7 +21,7 @@ body{ overflow-x:hidden; }
     "text"
     "media"
     "skills";
-  gap: 20px;
+  gap: 30px;
 }
 .about-text{ grid-area:text; }
 .about-media{ grid-area:media; text-align:center; }
@@ -82,4 +81,25 @@ h4{ font-size:26px; padding-bottom:16px; }
   .about-img {
     max-width: 80%;
     margin: 0 auto;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  :root {
+    --menu030-card-w: 200px;   /* malo uže */
+    --menu030-card-h: 300px;   /* proporcionalno niže */
+    --menu030-gap: 260px;      /* veći razmak među karticama */
+  }
+  
+  .menu030-stage {
+    height: calc(var(--menu030-card-h) + 24px);
+  }
+  .contact-btn {
+    font-size: 1rem;         /* smanjeno */
+    padding: 0.8rem 1.2rem;  /* uži padding */
+    white-space: nowrap;     /* sprečava prelazak u 2 reda */
   }
