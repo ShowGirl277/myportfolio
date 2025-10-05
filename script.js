@@ -1,4 +1,5 @@
 // HERO animacija + mouse + touch
+// HERO animacija + mouse + touch
 (function(){
   const hero = document.getElementById('ch030Hero');
   if(!hero) return;
