@@ -67,7 +67,7 @@ h4{ font-size:26px; padding-bottom:16px; }
 .menu030-title{ font-size:38px; margin:20px 0 30px; }
 .menu030-stage{ height:calc(var(--menu030-card-h) + 24px); }
 .menu030-arrow{ width:32px; height:32px; font-size:28px; top:40%; }
-.menu030-prev{ left:8px; } .menu030-next{ right:8px; object-fit: contain;}
+.menu030-prev{ left:8px; } .menu030-next{ right:8px; }
 
   .contact-btn {
     font-size: 1rem;         
