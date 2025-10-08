@@ -1,218 +1,115 @@
-/* =======================================================
-   MOBILNI STILOVI
-   (do 768px širine)
-   ======================================================= */
+body{ overflow-x:hidden; }
 
-@media screen and (max-width: 768px) {
+.ch030-hero-title{
+  font-size: clamp(40px, 14vw, 64px);
+  padding: 22px 0 26px;
+  line-height: .94;
+  white-space: nowrap;
+}
 
-  /* --- Osnovne postavke --- */
-  html, body {
-    overflow-x: hidden !important;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+.about{ padding: 48px 0 44px; }
+.about-container{
+  width: 90%;
+  max-width: 560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "media"
+    "skills";
+  gap: 30px;
+}
+.about-text{ grid-area:text; }
+.about-media{ grid-area:media; text-align:center; }
+.about-skills{ grid-area:skills; }
 
-  section {
-    padding: 48px 18px;
-  }
+.about-text h2{ font-size:1.45rem; margin-bottom:10px; text-align:center; }
+.about-text p{
+  font-size:15.5px; line-height:150%;
+  text-align:justify;
+}
+.about-img{
+  max-width: 78%;
+  height:auto;
+  margin: 2px auto 6px;
+}
 
-  h1, h2, h3, h4 {
-    font-size: clamp(20px, 6vw, 28px);
-    line-height: 1.2;
-  }
+.about-skills h3{ font-size:1.2rem; text-align:center; margin:6px 0 8px; }
+.skills-list{ text-align:center; }
+.skills-list li{ font-size:15.5px; }
 
-  p {
-    font-size: 15px;
-    line-height: 1.6;
-  }
+#programs{ padding:54px 14px 70px; }
+h4{ font-size:26px; padding-bottom:16px; }
+.programs-container{ gap:16px; }
+.programs-container img{ width:50px; border-radius:10px; box-shadow:0 8px 22px rgba(0,0,0,.18); }
 
-  /* --- Hero naslov --- */
-  .ch030-hero-title {
-    font-size: clamp(34px, 12vw, 52px);
-    padding: 20px 0;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-  }
+:root{
+  --menu030-card-w: 220px;
+  --menu030-card-h: 340px;
+  --menu030-gap: 260px;
+}
+.menu030{ padding:32px 0 54px; }
+.menu030-container{ padding:0 16px; }
+.menu030-title{ font-size:38px; margin:20px 0 30px; }
+.menu030-stage{ height:calc(var(--menu030-card-h) + 28px); }
+.menu030-arrow{ width:32px; height:32px; font-size:28px; top:50%; }
+.menu030-prev{ left:8px; } .menu030-next{ right:8px; }
 
-  /* =======================================================
-     SEKCIJA: O MENI
-     ======================================================= */
-  .about {
-    padding: 50px 0;
-  }
+.page-footer{ margin-top:64px; }
+.contact-btn{ padding:.85rem 1.5rem; font-size:.98rem; }
 
-  .about-container {
-    display: grid;
+.about-container {
     grid-template-columns: 1fr;
     grid-template-areas:
       "text"
       "media"
       "skills";
-    gap: 26px;
-    width: 100%;
+    gap: 20px;
+  }
+  
+  .about-text h2,
+  .about-skills h3 {
+    text-align: center;
+  }
+  
+  .about-img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
     max-width: 560px;
     margin: 0 auto;
-    padding: 0 18px;
-    box-sizing: border-box;
+    padding: 0 16px;
   }
-
-  .about-text {
-    grid-area: text;
-    text-align: left;
+  :root {
+    --menu030-card-w: 200px;
+    --menu030-card-h: 300px; 
+    --menu030-gap: 260px; 
   }
-
-  .about-text h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    text-align: left;
+  
+  .menu030-stage {
+    height: calc(var(--menu030-card-h) + 24px);
   }
-
-  .about-text p {
-    font-size: 15px;
-    text-align: left;
-    line-height: 1.7;
-  }
-
-  .about-media {
-    grid-area: media;
-    text-align: center;
+  .contact-btn {
+    font-size: 1rem;      
+    padding: 0.8rem 1.2rem; 
+    white-space: nowrap;  
   }
 
   .about-img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
-    margin: 0 auto;
     display: block;
-    object-fit: contain;
+    margin: 0 auto;
+    object-fit: contain; 
   }
-
-  .about-skills {
-    grid-area: skills;
-    text-align: left;
-  }
-
-  .about-skills h3 {
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-  }
-
-  .skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .skills-list li {
-    font-size: 15px;
-    line-height: 1.4;
-  }
-
-  /* =======================================================
-     SEKCIJA: PROGRAMI KOJE KORISTIM
-     ======================================================= */
-  #programs {
-    padding: 54px 16px 70px;
-  }
-
-  .programs-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .programs-container img {
-    width: 46px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  }
-
-  h4 {
-    font-size: 24px;
-    padding-bottom: 14px;
-    text-align: center;
-  }
-
-  /* =======================================================
-     SEKCIJA: MOJI PROJEKTI (menu030)
-     ======================================================= */
-  :root {
-    --menu030-card-w: 200px;
-    --menu030-card-h: 300px;
-    --menu030-gap: 240px;
-  }
-
-  .menu030 {
-    padding: 32px 0 54px;
-    overflow-x: hidden !important;
+  .about-container {
     width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
-
-  .menu030-container {
-    padding: 0 14px;
-    overflow-x: hidden !important;
-    width: 100%;
-  }
-
-  .menu030-title {
-    font-size: 32px;
-    margin: 18px 0 28px;
-    text-align: center;
-  }
-
-  .menu030-stage {
-    height: calc(var(--menu030-card-h) + 24px);
-    overflow-x: hidden !important;
-    overflow-y: visible;
-    contain: paint layout;
-    will-change: transform;
-  }
-
-  /* sprečava horizontalni unlock kod promene kartica */
-  .menu030-stage * {
-    max-width: 100vw;
-    transform-origin: center;
-    backface-visibility: hidden;
-  }
-
-  .menu030-prev,
-  .menu030-next {
-    width: 30px;
-    height: 30px;
-    font-size: 24px;
-    top: 50%;
-  }
-
-  .menu030-prev { left: 6px; }
-  .menu030-next { right: 6px; }
-
-  /* =======================================================
-     FOOTER
-     ======================================================= */
-  .page-footer {
-    margin-top: 60px;
-    padding: 40px 18px;
-    text-align: left;
-  }
-
-  .contact-btn {
-    display: inline-block;
-    padding: 0.9rem 1.3rem;
-    font-size: 1rem;
-    border-radius: 12px;
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  footer img {
-    max-width: 130px;
-  }
-
-  footer p {
-    font-size: 13.5px;
-    line-height: 1.5;
-  }
-}
