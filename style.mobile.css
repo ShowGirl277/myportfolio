@@ -1,7 +1,5 @@
-/* MOBILE (≤640px) — linearno sve ispod svega, bez preklapanja */
 body{ overflow-x:hidden; }
 
-/* Hero manji, animacija ostaje */
 .ch030-hero-title{
   font-size: clamp(40px, 14vw, 64px);
   padding: 22px 0 26px;
@@ -9,20 +7,8 @@ body{ overflow-x:hidden; }
   white-space: nowrap;
 }
 
-/* About – jedna kolona */
 .about{ padding: 48px 0 44px; }
-.about-container{
-  width: 90%;
-  max-width: 560px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "text"
-    "media"
-    "skills";
-  gap: 30px;
-}
+
 .about-text{ grid-area:text; }
 .about-media{ grid-area:media; text-align:center; }
 .about-skills{ grid-area:skills; }
@@ -32,89 +18,61 @@ body{ overflow-x:hidden; }
   font-size:15.5px; line-height:150%;
   text-align:justify;
 }
-.about-img{
-  max-width: 78%;
-  height:auto;
-  margin: 2px auto 6px;
-}
 
 .about-skills h3{ font-size:1.2rem; text-align:center; margin:6px 0 8px; }
 .skills-list{ text-align:center; }
 .skills-list li{ font-size:15.5px; }
 
-/* Programs */
-#programs{ padding:54px 14px 70px; }
-h4{ font-size:26px; padding-bottom:16px; }
-.programs-container{ gap:16px; }
-.programs-container img{ width:50px; border-radius:10px; box-shadow:0 8px 22px rgba(0,0,0,.18); }
-
-/* Slider skaliran */
-:root{
-  --menu030-card-w: 220px;
-  --menu030-card-h: 340px;
-  --menu030-gap: 260px;
-}
-.menu030{ padding:32px 0 54px; }
-.menu030-container{ padding:0 16px; }
-.menu030-title{ font-size:38px; margin:20px 0 30px; }
-.menu030-stage{ height:calc(var(--menu030-card-h) + 28px); }
-.menu030-arrow{ width:32px; height:32px; font-size:28px; top:50%; }
-.menu030-prev{ left:8px; } .menu030-next{ right:8px; }
-
-.page-footer{ margin-top:64px; }
-.contact-btn{ padding:.85rem 1.5rem; font-size:.98rem; }
-
 .about-container {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "text"
-      "media"
-      "skills";
-    gap: 20px;
-  }
-  
-  .about-text h2,
-  .about-skills h3 {
-    text-align: center;
-  }
-  
-  .about-img {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
-  :root {
-    --menu030-card-w: 200px;   /* malo uže */
-    --menu030-card-h: 300px;   /* proporcionalno niže */
-    --menu030-gap: 260px;      /* veći razmak među karticama */
-  }
-  
-  .menu030-stage {
-    height: calc(var(--menu030-card-h) + 24px);
-  }
-  .contact-btn {
-    font-size: 1rem;         /* smanjeno */
-    padding: 0.8rem 1.2rem;  /* uži padding */
-    white-space: nowrap;     /* sprečava prelazak u 2 reda */
-  }
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "media"
+    "skills";
+  gap: 20px;
+}
+
+.about-text h2,
+.about-skills h3 {
+  text-align: center;
+}
 
   .about-img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
-    object-fit: contain; /* sprečava da štrči */
+    object-fit: contain;
   }
   .about-container {
     width: 100%;
     max-width: 560px;
     margin: 0 auto;
-    padding: 0 16px; /* obavezno dodaj padding da sve ostane unutar */
+    padding: 0 20px;
     box-sizing: border-box;
   }
+
+#programs{ padding:54px 14px 70px; }
+h4{ font-size:26px; padding-bottom:16px; }
+.programs-container{ gap:16px; }
+.programs-container img{ width:50px; border-radius:10px; box-shadow:0 8px 22px rgba(0,0,0,.18); }
+
+:root {
+  --menu030-card-w: 200px;
+  --menu030-card-h: 300px;
+  --menu030-gap: 260px;
+}
+.menu030{ padding:32px 0 54px; }
+.menu030-container{ padding:0 16px; }
+.menu030-title{ font-size:38px; margin:20px 0 30px; }
+.menu030-stage{ height:calc(var(--menu030-card-h) + 24px); }
+.menu030-arrow{ width:32px; height:32px; font-size:28px; top:40%; }
+.menu030-prev{ left:8px; } .menu030-next{ right:8px; object-fit: contain;}
+
+  .contact-btn {
+    font-size: 1rem;         
+    padding: 0.8rem 1.2rem; 
+    white-space: nowrap;     
+  }
+
+.page-footer{ margin-top:64px; }
