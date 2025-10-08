@@ -1,17 +1,13 @@
 /* ========== GLOBAL RESET ========== */
-body {
-  overflow-x: hidden;
+html, body {
+  width: 100%;
+  overflow-x: clip; /* sigurnije od hidden jer sprečava unlock kod animacija */
 }
 
-h4 {
-  font-size: 26px;
-  padding-bottom: 16px;
-}
-
-.contact-btn {
-  font-size: 1rem;
-  padding: 0.8rem 1.2rem;
-  white-space: nowrap;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* ========== HERO SECTION ========== */
@@ -22,7 +18,7 @@ h4 {
   white-space: nowrap;
 }
 
-/* ========== ABOUT SECTION ========== */
+/* ========== ABOUT SECTION ("O MENI") ========== */
 .about {
   padding: 48px 0 44px;
 }
@@ -39,23 +35,23 @@ h4 {
     "media"
     "skills";
   gap: 20px;
-  box-sizing: border-box;
 }
 
 .about-text {
   grid-area: text;
+  text-align: left; /* levo poravnanje */
 }
 
 .about-text h2 {
   font-size: 1.45rem;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .about-text p {
   font-size: 15.5px;
   line-height: 150%;
-  text-align: justify;
+  text-align: left;
 }
 
 .about-media {
@@ -73,25 +69,33 @@ h4 {
 
 .about-skills {
   grid-area: skills;
+  text-align: left;
 }
 
 .about-skills h3 {
   font-size: 1.2rem;
-  text-align: center;
   margin: 6px 0 8px;
 }
 
 .skills-list {
-  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .skills-list li {
   font-size: 15.5px;
+  line-height: 1.5;
 }
 
 /* ========== PROGRAMS SECTION ========== */
 #programs {
   padding: 54px 14px 70px;
+}
+
+h4 {
+  font-size: 26px;
+  padding-bottom: 16px;
 }
 
 .programs-container {
@@ -116,10 +120,15 @@ h4 {
 
 .menu030 {
   padding: 32px 0 54px;
+  position: relative;
+  overflow-x: clip; /* dodatno zaključavanje */
 }
 
 .menu030-container {
   padding: 0 16px;
+  overflow-x: clip;
+  position: relative;
+  max-width: 100vw;
 }
 
 .menu030-title {
@@ -128,25 +137,29 @@ h4 {
 }
 
 .menu030-stage {
-  height: calc(var(--menu030-card-h) + 24px);
-  overflow: hidden; /* sprečava otključavanje overflowa */
   position: relative;
+  height: calc(var(--menu030-card-h) + 24px);
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
+  max-width: 100vw;
 }
 
-/* sigurnosno — ako slider koristi translate ili absolute pomeranje */
+/* sigurnosno — sprečava da elementi izađu iz viewporta kod animacija */
 .menu030-stage * {
-  max-width: 100vw;
-  box-sizing: border-box;
+  max-width: 100vw !important;
+  overflow: clip;
 }
 
 .menu030-arrow {
   width: 32px;
   height: 32px;
   font-size: 28px;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  position: absolute;
   cursor: pointer;
+  z-index: 2;
 }
 
 .menu030-prev {
@@ -160,4 +173,10 @@ h4 {
 /* ========== FOOTER ========== */
 .page-footer {
   margin-top: 64px;
+}
+
+.contact-btn {
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  white-space: nowrap;
 }
